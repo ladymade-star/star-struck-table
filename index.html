@@ -2,7 +2,7 @@
 <html lang="ja">
 
 <head>
-    <title>–{¿joy</title>
+    <title>æœ¬è³ªjoy</title>
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS" />
@@ -12,13 +12,13 @@
 </head>
 
 <body class="diff">
-    <p style="color:#ffffee">©•ª—pƒ‰ƒuƒSFDFD‘Îô‚‘¬—‘Å“ïˆÕ“x•\<br />
-        ŸŠú“ïˆÕ“x•\ƒtƒH[ƒ}ƒbƒg‘Î‰<br />
-        •s’èŠúXV<br />
+    <p style="color:#ffffee">è‡ªåˆ†ç”¨ãƒ©ãƒ–ã‚´FDFDå¯¾ç­–é«˜é€Ÿä¹±æ‰“é›£æ˜“åº¦è¡¨<br />
+        æ¬¡æœŸé›£æ˜“åº¦è¡¨ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆå¯¾å¿œ<br />
+        ä¸å®šæœŸæ›´æ–°<br />
     </p>
-    <!--@@@@@‚±‚±‚©‚ç“ïˆÕ“x•\–{‘Ì@@@@@-->
+    <!--ã€€ã€€ã€€ã€€ã€€ã“ã“ã‹ã‚‰é›£æ˜“åº¦è¡¨æœ¬ä½“ã€€ã€€ã€€ã€€ã€€-->
     <div class="tableflame">
-        <table align="center" cellspacing="1" cellpadding=2@border="0" bgcolor="#000000" id="table_int">
+        <table align="center" cellspacing="1" cellpadding=2ã€€border="0" bgcolor="#000000" id="table_int">
         </table>
     </div>
     <script language="javascript" type="text/javascript">
@@ -35,25 +35,25 @@
             var ev = "";
             var count = 0;
             var obj = $("#table_int");
-            // •\‚ÌƒNƒŠƒA
+            // è¡¨ã®ã‚¯ãƒªã‚¢
             obj.html("");
-            $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>ƒ^ƒCƒgƒ‹</td><td align='center'>–{‘Ì</td><td align='center'>·•ª</td><td align='center'>ƒRƒƒ“ƒg</td></tr>")
+            $("<tr height='20' style='color:white;background-color:#666666'><td align='center'>LV</td><td align='center'>ã‚¿ã‚¤ãƒˆãƒ«</td><td align='center'>æœ¬ä½“</td><td align='center'>å·®åˆ†</td><td align='center'>ã‚³ãƒ¡ãƒ³ãƒˆ</td></tr>")
                 .appendTo(obj);
             var obj_sep = null;
             for (var i = 0; i < info.length; i++) {
-                // “ï“x‚²‚Æ‚Ì‹æØ‚è
+                // é›£åº¦ã”ã¨ã®åŒºåˆ‡ã‚Š
                 if (x != info[i].level) {
-                    // ‘O‚Ì‹æØ‚è‚É•ˆ–Ê”A•½‹Ï–§“x‚ğ’Ç‰Á
+                    // å‰ã®åŒºåˆ‡ã‚Šã«è­œé¢æ•°ã€å¹³å‡å¯†åº¦ã‚’è¿½åŠ 
                     if (obj_sep != null) {
                         obj_sep.html("<td colspan='6' align='center'>" + "<b>" + mark + x + " (" + count +
-                            "•ˆ–Ê)</b></td>");
+                            "è­œé¢)</b></td>");
                     }
                     obj_sep = $("<tr class='tr_separate' id='" + mark + info[i].level + "'></tr>");
                     obj_sep.appendTo(obj);
                     count = 0;
                     x = info[i].level;
                 }
-                // –{•¶
+                // æœ¬æ–‡
                 var str = $("<tr class='tr_normal'></tr>");
                 if (info[i].state == 1) {
                     str = $("<tr class='tr_new'></tr>");
@@ -61,13 +61,13 @@
                 if (info[i].state == 2) {
                     str = $("<tr class='tr_update'></tr>");
                 }
-                // ƒŒƒxƒ‹•\‹L
+                // ãƒ¬ãƒ™ãƒ«è¡¨è¨˜
                 $("<td width='5%'>" + mark + x + "</td>").appendTo(str);
-                // ƒ^ƒCƒgƒ‹
+                // ã‚¿ã‚¤ãƒˆãƒ«
                 $("<td width='20%'>" +
                     "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[i]
                     .md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
-                // ƒA[ƒeƒBƒXƒg
+                // ã‚¢ãƒ¼ãƒ†ã‚£ã‚¹ãƒˆ
                 var astr = "";
                 if (info[i].url != null) {
                     if (info[i].artist != null) {
@@ -92,21 +92,21 @@
                     }
                 }
                 $("<td width='20%'>" + astr + "</td>").appendTo(str);
-                // ·•ª
+                // å·®åˆ†
                 if (info[i].url_diff != null) {
                     $("<td width='5%'><center><a href='" + info[i].url_diff + "'>DL</a></center></td>")
                         .appendTo(str);
                 } else {
                     $("<td width='5%'></td>").appendTo(str);
                 }
-                // ƒRƒƒ“ƒg
+                // ã‚³ãƒ¡ãƒ³ãƒˆ
                 $("<td width='15%'>" + info[i].comment + "</td>").appendTo(str);
                 str.appendTo(obj);
                 count++;
             }
-            // ÅŒã‚Ì‹æØ‚èˆ—
+            // æœ€å¾Œã®åŒºåˆ‡ã‚Šå‡¦ç†
             if (obj_sep != null) {
-                obj_sep.html("<td colspan='6' align='center'>" + "<b>" + mark + x + " (" + count + "•ˆ–Ê)</b></td>");
+                obj_sep.html("<td colspan='6' align='center'>" + "<b>" + mark + x + " (" + count + "è­œé¢)</b></td>");
             }
         }
     </script>
