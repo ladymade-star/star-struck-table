@@ -1,4 +1,3 @@
-# Essence-BMS-Table
-本質難易度表
+# star-struck-table
 
-https://ladymade-star.github.io/Essence-BMS-Table/
+https://ladymade-star.github.io/star-struck-table/

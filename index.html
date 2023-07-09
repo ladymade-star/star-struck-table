@@ -1,102 +1,364 @@
 <!DOCTYPE html>
 <html lang="ja">
-
-<head>
-    <title>本質joy</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <title>★★joy</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0, user-scalable=yes" />
     <meta name="bmstable" content="header.json" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-    </script>
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/material-kit/3.0.3/css/material-kit.css"
+      integrity="sha512-O1Iyk1hSWQMilXqlrhY9RpDnln9K9FzljvAW6hpNJaFDlAe9Txk4kTPlcHBFaY5YxZjBOz6WBTbtg8Hjsfiw9w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/material-kit/3.0.3/js/material-kit.min.js"
+      integrity="sha512-9EgoG4Ypp+QejqrxPVXIpj5qjGkAZKuAJSA1O/q9yfBjxYRY6SH/u15L7M+y6U3w4qMxoUQfZxABPH7zEEEgMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
 
-<body>
-    <header class="mb-3">
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1">本質joy</span>
-            </div>
-        </nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <meta property="og:url" content="https://ladymade-star.github.io/star-struck-table/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="★★joy" />
+    <meta property="og:description" content="★★joy" />
+    <meta property="og:site_name" content="★★joy" />
+  </head>
+
+  <body>
+    <header class="pb-3 mb-3">
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1"><a href="./" class="link-light">★★joy</a></span>
+        </div>
+      </nav>
     </header>
 
-    <div class="container">
-        <div class="alert alert-success mb-3" role="alert">
-            <p>ラブゴやFDFD対策になりそうな高速乱打練習用譜面を集めた個人難易度表です。次期難易度表フォーマット対応。</p>
-            <p>難易度表の読み込みと表示に数秒かかります。</p>
-            <hr>
-            <p class="mb-0">不定期更新</p>
+    <div class="container-fluid">
+      <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-3 fw-bold">
+            <object
+              data="./favicon.svg"
+              width="80"
+              height="80"
+              style="vertical-align: text-bottom; margin-right: 10px"
+            ></object
+            >joy
+          </h1>
+          <p class="fs-5"></p>
         </div>
-
-
-        <!--ここから難易度表本体-->
-        <div>
-            <table class="table table-light table-striped table-hover" id="table_int">
+      </div>
+      <div class="p-5 mb-4 border rounded-3">
+        <div class="container-fluid py-2">
+          <h2 class="display-6 fw-bold">Table</h2>
+          <p>
+            当難易度表のシンボルは<img
+              draggable="false"
+              height="16px"
+              style="vertical-align: -0.1rem"
+              alt="🤩"
+              src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f929.svg"
+            />または<code>★★joy</code>です。
+          </p>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">譜面の状態</th>
+                  <th scope="col">説明</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <span class="badge bg-success">Accepted</span>
+                  </td>
+                  <td>正式に登載された譜面です。</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="badge bg-info">Qualified</span>
+                  </td>
+                  <td>
+                    <p>
+                      最近登載された譜面です。一定期間が経過した後に<span class="badge bg-success">Accepted</span
+                      >になります。
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="badge bg-primary">Loved</span>
+                  </td>
+                  <td>登載に至らなかった譜面のうち、評価の高い譜面です。</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="badge bg-warning">Pending</span>
+                  </td>
+                  <td>
+                    <p>今後評価を予定している譜面です。</p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="badge bg-secondary">Graveyard</span>
+                  </td>
+                  <td>その他の譜面です。</td>
+                </tr>
+                <tr>
+                  <td>
+                    <span class="badge bg-dark">Banned</span>
+                  </td>
+                  <td>管理者により強制的に削除された譜面です。</td>
+                </tr>
+              </tbody>
             </table>
+          </div>
+          <div class="table-responsive">
+            <div id="chart-table">
+              <section class="py-1">
+                <div class="container">
+                  <div class="row justify-space-between py-2">
+                    <div>
+                      <div class="input-group input-group-dynamic mb-4">
+                        <span class="input-group-text"></span>
+                        <input class="search form-control" placeholder="Search" type="text" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <p>表の見出しをクリックするとソートできます。</p>
+              <div class="text-xs">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col" class="sort" data-sort="level">Level</th>
+                      <th scope="col" class="sort" data-sort="status">Status</th>
+                      <th scope="col" class="sort" data-sort="title">Title</th>
+                      <th scope="col" class="sort" data-sort="artist">Artist</th>
+                      <th scope="col" class="sort" data-sort="proposer">Proposer</th>
+                      <th scope="col">LR2IR</th>
+                      <th scope="col">MinIR</th>
+                      <th scope="col">Preview</th>
+                    </tr>
+                  </thead>
+                  <tbody class="list"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <style>
+              .sort.asc:after {
+                content: "↓";
+                padding-left: 10px;
+              }
+              .sort.desc:after {
+                content: "↑";
+                padding-left: 10px;
+              }
+            </style>
+
+            <script>
+              const bmsStatusToClass = {
+                accepted: "bg-success",
+                qualified: "bg-info",
+                loved: "bg-primary",
+                voting: "bg-danger",
+                pending: "bg-warning",
+                graveyard: "bg-secondary",
+                banned: "bg-dark",
+              }
+              const capitalize = (string) => {
+                if (typeof string !== "string" || !string) return string
+                return `${string.charAt(0).toUpperCase()}${string.slice(1).toLowerCase()}`
+              }
+
+              let bmsTable
+              const listOptions = {
+                item: (bms) => {
+                  return `<tr>
+                    <td class="level">${bms.level}</td>
+                    <td>
+                      <span class="badge ${bmsStatusToClass[bms.status]}">${capitalize(bms.status)}</span>
+                    </td>
+                    <td class="title"><a href="${bms.lr2ir}"><div class="text-overflow" style="max-width: 300px;">${
+                    bms.title
+                  }</div></a></td>
+                    <td class="artist"><div class="text-overflow" style="max-width: 200px;">${bms.artist}</div></td>
+                    <td class="proposer"><div class="text-overflow" style="max-width: 100px;">${bms.proposer}</div></td>
+                    <td class="lr2ir"><a href="${bms.lr2ir}">LR2IR</a></td>
+                    <td class="minir"><a href="${bms.minir}">MinIR</a></td>
+                    <td class="preview"><a href="${bms.preview}">Preview</a></td>
+                  </tr>`
+                },
+              }
+              const listValues = []
+
+              const bmsTableHeaderName = "header_sub.json" //document.querySelector('meta[name="bmstable"]').content
+              fetch(bmsTableHeaderName)
+                .then((response) => {
+                  if (!response.ok) {
+                    throw new Error(response.statusText)
+                  }
+                  return response.json()
+                })
+                .then((headerJson) => {
+                  fetch(headerJson.data_url)
+                    .then((response) => {
+                      if (!response.ok) {
+                        throw new Error(response.statusText)
+                      }
+                      return response.json()
+                    })
+                    .then((tableJson) => {
+                      for (const bms of tableJson) {
+                        listValues.push({
+                          level: Number.isNaN(parseInt(bms.level)) ? bms.level : parseInt(bms.level),
+                          status: bms.status,
+                          title: bms.title,
+                          artist: bms.artist,
+                          proposer: bms.proposer,
+                          lr2ir: `http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=${bms.md5}`,
+                          minir: `https://www.gaftalk.com/minir/#/viewer/song/${bms.sha256}/0`,
+                          preview: `http://www.ribbit.xyz/bms/score/view?md5=${bms.md5}`,
+                        })
+                      }
+                      bmsTable = new List("chart-table", listOptions, listValues)
+                    })
+                })
+                .catch((error) => {
+                  console.error(error)
+                })
+            </script>
+          </div>
+          <hr />
+          <h2 class="display-6 fw-bold">Getting Started</h2>
+          <p>以下のリンク先をGLAssistやBeMusicSeekerやbeatorajaで読み込んでください。</p>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">難易度表</th>
+                  <th scope="col">説明</th>
+                  <th scope="col">備考</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <a href="./table.html"
+                      ><button class="btn bg-gradient-success w-auto me-2" type="button">★★joy</button></a
+                    >
+                  </td>
+                  <td>
+                    <span class="badge bg-success">Accepted</span>,
+                    <span class="badge bg-info">Qualified</span>の譜面が収録されています。
+                  </td>
+                  <td>おすすめ</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="./table_plus.html"
+                      ><button class="btn bg-gradient-primary w-auto me-2" type="button">★★joy+</button></a
+                    >
+                  </td>
+                  <td>
+                    <span class="badge bg-success">Accepted</span>, <span class="badge bg-info">Qualified</span>,
+                    <span class="badge bg-primary">Loved</span>の譜面が収録されています。
+                  </td>
+                  <td>おすすめ</td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="./table_sub.html"><button class="btn btn-dark" type="button">★★joy Sub</button></a>
+                  </td>
+                  <td>すべての譜面が収録されています。</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="./table_accepted.html"
+                      ><button class="btn bg-gradient-success w-auto me-2" type="button">★★joy (Accepted)</button></a
+                    >
+                  </td>
+                  <td><span class="badge bg-success">Accepted</span>の譜面が収録されています。</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="./table_qualified.html"
+                      ><button class="btn bg-gradient-info w-auto me-2" type="button">★★joy (Qualified)</button></a
+                    >
+                  </td>
+                  <td><span class="badge bg-info">Qualified</span>の譜面が収録されています。</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="./table_loved.html"
+                      ><button class="btn bg-gradient-primary w-auto me-2" type="button">★★joy (Loved)</button></a
+                    >
+                  </td>
+                  <td><span class="badge bg-primary">Loved</span>の譜面が収録されています。</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="./table_pending.html"
+                      ><button class="btn btn-warning" type="button">★★joy (Pending)</button></a
+                    >
+                  </td>
+                  <td><span class="badge bg-warning">Pending</span>の譜面が収録されています。</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <a href="./table_graveyard.html"
+                      ><button class="btn btn-secondary" type="button">★★joy (Graveyard)</button></a
+                    >
+                  </td>
+                  <td><span class="badge bg-secondary">Graveyard</span>の譜面が収録されています。</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <hr />
+          <h2 class="display-6 fw-bold">Proposal</h2>
+          <p>譜面の新規提案は以下のリンク先から行えます。</p>
+          <a href="./propose.html"><button class="btn btn-warning btn-lg" type="button">新規提案フォーム</button></a>
+          <hr />
+          <h2 class="display-6 fw-bold">Links</h2>
+          <ul>
+            <li>
+              <a href="https://twitter.com/ladymade_star_">Twitter</a>
+            </li>
+          </ul>
         </div>
-        <script language="javascript" type="text/javascript">
-            $(document).ready(function () {
-                $.getJSON($("meta[name=bmstable]").attr("content"), function (header) {
-                    $.getJSON(header.data_url, function (information) {
-                        makeBMSTable(information, header.symbol);
-                    });
-                });
-            });
-
-            function makeBMSTable(info, mark) {
-                var x = "";
-                var ev = "";
-                var count = 0;
-                var obj = $("#table_int");
-
-                obj.html("");
-                $("<thead class='table-dark'><tr><th>Level</th><th>Title</th><th>Artist</th><th>Comment</th></tr></thead><tbody>")
-                    .appendTo(obj);
-                var obj_sep = null;
-                for (var i = 0; i < info.length; i++) {
-                    if (x != info[i].level) {
-                        if (obj_sep != null) {
-                            obj_sep.html("<td colspan='4'>" + "<b>" + mark + x + " (" + count +
-                                "譜面)</b></td>");
-                        }
-                        obj_sep = $("<tr class='table-dark' style='text-align:center' id='" + mark + info[i].level +
-                            "'></tr>");
-                        obj_sep.appendTo(obj);
-                        count = 0;
-                        x = info[i].level;
-                    }
-
-                    var str = $("<tr></tr>");
-
-                    // Level
-                    $("<td width='5%'>" + mark + x + "</td>").appendTo(str);
-
-                    // Title
-                    $("<td width='45%'>" +
-                        "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[
-                            i]
-                        .md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
-
-                    // Artist
-                    $("<td width='40%'>" + info[i].artist + "</td>").appendTo(str);
-
-                    // Comment
-                    $("<td width='10%'>" + info[i].comment + "</td>").appendTo(str);
-                    str.appendTo(obj);
-                    count++;
-
-                }
-                $("</tbody>").appendTo(obj);
-
-                if (obj_sep != null) {
-                    obj_sep.html("<td class='table-dark' style='text-align:center' colspan='4'>" + "<b>" + mark + x +
-                        " (" + count + "譜面)</b></td>");
-                }
-            }
-        </script>
+      </div>
     </div>
+  </body>
 </html>

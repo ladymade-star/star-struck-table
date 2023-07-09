@@ -1,0 +1,13 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+#chart-table {
+  height: 80vh;
+}
+
+.text-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
